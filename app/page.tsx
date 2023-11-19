@@ -15,6 +15,7 @@ export default function Home() {
       <Header />
 
       {/* Random message */}
+
       <Message />
 
       {/* footer */}
