@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./components/Header";
+import Message from "./components/Message";
 
 import { Metadata } from "next";
 
@@ -12,7 +13,11 @@ export default function Home() {
     <div className="bg-[rgb(36,36,36)] text-color-11 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
       {/* Header */}
       <Header />
-      <h1>Mixed random messages</h1>
+
+      {/* Random message */}
+      <Message />
+
+      {/* footer */}
     </div>
   );
 }
