@@ -4,11 +4,11 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: #00de1205;
-  --background-end-rgb: #5ef7780a;
+  --background-start-rgb: #00000000;
+  --background-end-rgb: #f4f4f309;
 
   /* Text color */
-  --text-color: #71d083;
+  --text-color: #fffcf4b0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,12 +36,12 @@ body {
 .play-btn {
   width: 100px;
   height: 100px;
-  background: radial-gradient(#70fe8c1b 60%, #70fe8c1b 62%);
+  background: radial-gradient(#f6f6f513 60%, #fffaed2d 62%);
   border-radius: 50%;
   position: relative;
   display: block;
   margin: 100px auto;
-  box-shadow: 0px 0px 25px 3px #70fe8c1b;
+  box-shadow: 0px 0px 25px 3px #fefef31b;
 }
 
 /* triangle */
@@ -57,7 +57,7 @@ body {
   height: 0;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-left: 25px solid #44ffaa4b;
+  border-left: 25px solid #fffbed3c;
   z-index: 100;
   -webkit-transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -84,7 +84,7 @@ body {
   border: 5px solid rgba(255, 255, 255, 0.75);
   top: -25%;
   left: -25%;
-  background: #70fe8c1b;
+  background: #fbfbeb23;
 }
 
 @-webkit-keyframes pulsate1 {
@@ -92,8 +92,8 @@ body {
     -webkit-transform: scale(0.6);
     transform: scale(0.6);
     opacity: 1;
-    box-shadow: inset 0px 0px 25px 3px rgba(11, 6, 6, 0.75),
-      0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0px 0px 25px 3px #fbfbeb23,
+      0px 0px 25px 10px rgba(255, 249, 235, 0.341);
   }
   100% {
     -webkit-transform: scale(1);
@@ -108,8 +108,8 @@ body {
     -webkit-transform: scale(0.6);
     transform: scale(0.6);
     opacity: 1;
-    box-shadow: inset 0px 0px 25px 3px rgba(255, 255, 255, 0.75),
-      0px 0px 25px 10px rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0px 0px 25px 3px hsla(42, 100%, 96%, 0.341),
+      0px 0px 25px 10px rgba(255, 249, 235, 0.341);
   }
   100% {
     -webkit-transform: scale(1, 1);
@@ -117,4 +117,36 @@ body {
     opacity: 0;
     box-shadow: none;
   }
+}
+
+/* input  */
+.coolinput {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: static;
+  max-width: 240px;
+}
+
+.coolinput label.text {
+  font-size: 0.75rem;
+  color: #818cf8;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: #e8e8e8;
+  width: fit-content;
+}
+
+.coolinput input[type="text"].input {
+  padding: 11px 10px;
+  font-size: 0.75rem;
+  border: 2px #818cf8 solid;
+  border-radius: 5px;
+  background: #e8e8e8;
+}
+*/ .coolinput input[type="text"].input:focus {
+  outline: none;
 }
