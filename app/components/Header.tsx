@@ -27,13 +27,6 @@ export default function Header({}: Props) {
       >
         {/* Social Icons */}
         <SocialIcon
-          url="https://lewagon-alumni.slack.com/team/U053J8Q0Z50"
-          fgColor="currentColor"
-          bgColor="transparent"
-          className="text-gray-500 hover:animate-ping hover:duration-100"
-        />
-
-        <SocialIcon
           url="https://www.linkedin.com/in/alexzoonekynd"
           fgColor="gray"
           bgColor="transparent"
