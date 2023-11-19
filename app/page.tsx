@@ -1,14 +1,13 @@
-"use client";
 import Image from "next/image";
 import Header from "./components/Header";
 import Title from "./components/Title";
 import Button from "./components/Button";
 
-// import { Metadata } from "next";
+import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Random Mixed Messages",
-// };
+export const metadata: Metadata = {
+  title: "Get inspired...",
+};
 
 export default function Home() {
   return (

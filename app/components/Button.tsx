@@ -51,31 +51,23 @@ function Button({}: Props) {
     return Math.floor(Math.random() * num);
   }
 
-  // crée une boucle pour itérer sur Collection et qui récupérer au hasard un élement de chaque clés
   function randomGenerator(collection: Record<string, string[]>): string[] {
     let result = [];
-    for (let key in collection) {
-      const randomIndex = generateRandomNumber(collection[key].length);
-      switch (key) {
-        case "motivation":
-          result.push(collection[key][randomIndex]);
-          break;
-        case "perseverance":
-          result.push(collection[key][randomIndex]);
-          break;
-        case "ambition":
-          result.push(collection[key][randomIndex]);
-          break;
 
-        default:
-          console.log("not found");
-          break;
-      }
-    }
+    // Choisi une clé aléatoirement dasns l'objet
+    const randomKeyIndex = generateRandomNumber(Object.keys(collection).length);
+    const randomKey = Object.keys(collection)[randomKeyIndex];
+
+    // Choisi un index aléatoire pour la clé sélectionnée
+    const randomIndex = generateRandomNumber(collection[randomKey].length);
+
+    // Ajoute le message correspondant à la clé sélectionnée dans le résultat
+    result.push(collection[randomKey][randomIndex]);
+
     return result;
   }
 
-  const sentence = randomGenerator(collection).join("\n");
+  //const sentence = randomGenerator(collection).join("\n");
 
   function handleClick() {
     const newSentence = randomGenerator(collection).join("\n");
@@ -98,3 +90,35 @@ function Button({}: Props) {
 }
 
 export default Button;
+
+// TODO:  - faire en sorte que la clé s'affiche sur la bordure du cadre
+//        - affichage en opacity 0 et passer a 1 au onClik du button
+//        - Trouver une police
+//        - faire le footer
+
+// ------------------------
+// ? fonction qui retourne un message de chaque clés.
+// // crée une boucle pour itérer sur Collection et qui récupérer au hasard un élement de chaque clés
+// function randomGenerator(collection: Record<string, string[]>): string[] {
+//   let result = [];
+//   for (let key in collection) {
+//     const randomIndex = generateRandomNumber(collection[key].length);
+//     switch (key) {
+//       case "motivation":
+//         result.push(collection[key][randomIndex]);
+//         break;
+//       case "perseverance":
+//         result.push(collection[key][randomIndex]);
+//         break;
+//       case "ambition":
+//         result.push(collection[key][randomIndex]);
+//         break;
+
+//       default:
+//         console.log("not found");
+//         break;
+//     }
+//   }
+//   console.log(result);
+//   return result;
+// }
