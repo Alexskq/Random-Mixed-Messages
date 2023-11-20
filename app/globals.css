@@ -147,6 +147,6 @@ body {
   border-radius: 5px;
   background: #e8e8e8;
 }
-*/ .coolinput input[type="text"].input:focus {
+.coolinput input[type="text"].input:focus {
   outline: none;
 }

@@ -2,14 +2,16 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function Button({}: Props) {
   const [currentSentence, setCurrentSentence] = useState("");
+  const [randomKey, setRandomKey] = useState("");
 
   const collection = {
-    motivation: [
+    Motivation: [
       "La motivation vous permet de commencer. L'habitude vous permet de continuer.",
       "Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. Si vous aimez ce que vous faites, vous réussirez.",
       "Ne rêvez pas de votre vie, vivez vos rêves.",
@@ -21,7 +23,7 @@ function Button({}: Props) {
       "Ne comparez pas votre début avec le milieu de quelqu'un d'autre.",
       "Le meilleur moment pour planter un arbre était il y a 20 ans. Le deuxième meilleur moment est maintenant.",
     ],
-    perseverance: [
+    Perseverance: [
       "La persévérance n'est pas une course longue et solitaire. C'est une série de courses courtes, une après l'autre.",
       "Lorsque vous avez une vision claire de votre objectif, il est plus facile de ne pas abandonner.",
       "La persévérance est le secret de toutes les victoires.",
@@ -33,7 +35,7 @@ function Button({}: Props) {
       "La persévérance est le chemin du succès.",
       "Continuez à avancer, même si chaque pas est petit. La persévérance conduit au succès.",
     ],
-    ambition: [
+    Ambition: [
       "Ayez de grandes attentes et attendez-vous à atteindre quelque chose de grand.",
       "L'ambition est le chemin du succès. La persévérance est le véhicule dans lequel vous y arrivez.",
       "N'ayez pas peur d'être ambitieux à propos de vos objectifs. Chaque rêveur a commencé petit.",
@@ -63,6 +65,7 @@ function Button({}: Props) {
 
     // Ajoute le message correspondant à la clé sélectionnée dans le résultat
     result.push(collection[randomKey][randomIndex]);
+    setRandomKey(randomKey);
 
     return result;
   }
@@ -80,10 +83,15 @@ function Button({}: Props) {
         <Link onClick={handleClick} className="play-btn py-5" href="#" />
       </div>
 
-      <div className="border-solid border border-[#FFFBED3C] rounded-lg mx-5 h-auto p-4">
-        <span className="italic text-base">
-          &quot; {currentSentence} &quot;
-        </span>
+      <div className="relative">
+        <div className="border border-solid border-[#FFFBED3C] mx-5 h-auto p-4 rounded-lg shadow-md relative z-1">
+          <span className="italic text-base">
+            &quot; {currentSentence} &quot;
+          </span>
+        </div>
+        <h2 className="absolute top-1 left-12 bg-[#000000] px-2 -mt-4 font-semibold text-white-700 z-10">
+          {randomKey}
+        </h2>
       </div>
     </div>
   );
@@ -91,8 +99,8 @@ function Button({}: Props) {
 
 export default Button;
 
-// TODO:  - faire en sorte que la clé s'affiche sur la bordure du cadre
-//        - affichage en opacity 0 et passer a 1 au onClik du button
+// TODO:  - affichage en opacity 0 et passer a 1 au onClik du button
+//        - faire en sorte que la clé s'affiche sur la bordure du cadre
 //        - Trouver une police
 //        - faire le footer
 
