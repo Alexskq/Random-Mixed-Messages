@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "./components/Header";
 import Title from "./components/Title";
 import Button from "./components/Button";
+import Footer from "./components/Footer";
 
 import { Metadata } from "next";
 
