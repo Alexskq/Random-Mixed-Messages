@@ -11,11 +11,14 @@ function Button({}: Props) {
   const [currentSentence, setCurrentSentence] = useState("");
   const [randomKey, setRandomKey] = useState("");
   const [showMessage, setShowMessage] = useState(false);
+  const [restartAnimation, setRestartAnimation] = useState(false);
 
   const [title, count] = useTypewriter({
     words: [currentSentence],
     loop: true,
     delaySpeed: 2000,
+    deleteSpeed: 0,
+    // reset: restartAnimation,
   });
 
   const collection = {
@@ -84,6 +87,7 @@ function Button({}: Props) {
     const newSentence = randomGenerator(collection).join("\n");
     setCurrentSentence(newSentence);
     setShowMessage(true);
+    setRestartAnimation((prevState) => !prevState);
   }
 
   return (
@@ -92,32 +96,23 @@ function Button({}: Props) {
         <Link onClick={handleClick} className="play-btn py-5" href="#" />
       </div>
 
-      <div className="relative mx-0 my-auto">
+      <div className="relative mx-0 my-auto h-[50px]">
         <motion.div
           initial={{ height: 0, opacity: 0, width: 0 }}
           animate={{
             height: showMessage ? "auto" : 0,
             opacity: showMessage ? 1 : 0,
             width: showMessage ? "auto" : 0,
-            transition: { duration: 5 },
+            transition: { duration: 2 },
           }}
           // transition={{ duration: 0.5 }}
-          className="border border-solid border-[#FFFBED3C] mx-5 h-auto p-4 rounded-lg shadow-md relative z-1 text-center"
+          className="border border-solid border-[#FFFBED3C] mx-5 h-auto p-4 rounded-lg shadow-md relative z-1 text-center overflow-hidden"
         >
           <span>
-            &quot; {currentSentence}
+            &quot; {title}
             <Cursor cursorColor="#50FDAC5E" cursorStyle="_" />
             &quot;
           </span>
-
-          {/* <Typewriter
-            words={[currentSentence]}
-            cursor
-            cursorStyle="_"
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          /> */}
         </motion.div>
         <motion.h2
           initial={{ opacity: 0 }}
