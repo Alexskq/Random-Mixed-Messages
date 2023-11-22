@@ -24,3 +24,5 @@ export default function Home() {
     </div>
   );
 }
+
+// TODO : essayer de mettre la div du message en display none puis l'affiche au clic du play
