@@ -19,8 +19,6 @@ export default function Home() {
 
       {/* Button */}
       <Button />
-
-      {/* contact me  */}
     </div>
   );
 }

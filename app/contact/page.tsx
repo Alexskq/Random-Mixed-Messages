@@ -27,12 +27,12 @@ function ContactMe({}: Props) {
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-10 text-[#FFFFFDED]">
-        <h4 className="text-4xl font-semibold text-center">
-          I have got just what you need.{" "}
-          <span className="decoration-[#FFFAE965]/50 underline">
+      <div className="flex flex-col space-y-10 text-[#FFFFFDED] font-[body] tracking-[1px]">
+        <h4 className="text-3xl font-medium text-center tracking-[2px]">
+          Discutons ensemble...{" "}
+          {/* <span className="decoration-[#FFFAE965]/50 underline">
             Let&apos;s talk
-          </span>
+          </span> */}
         </h4>
 
         <div className="space-y-10">
@@ -59,7 +59,7 @@ function ContactMe({}: Props) {
           <div className="flex space-x-2 text-black">
             <input
               {...register("name")}
-              placeholder="Name"
+              placeholder="Nom"
               type="text"
               className="contactInput"
             />
@@ -73,7 +73,7 @@ function ContactMe({}: Props) {
 
           <input
             {...register("subject")}
-            placeholder="Subject"
+            placeholder="Sujet"
             className="contactInput  text-black"
             type="text"
           />
