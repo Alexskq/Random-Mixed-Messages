@@ -30,24 +30,24 @@ function ContactMe({}: Props) {
       <div className="flex flex-col space-y-10 text-[#FFFFFDED]">
         <h4 className="text-4xl font-semibold text-center">
           I have got just what you need.{" "}
-          <span className="decoration-[#F7AB0A]/50 underline">
+          <span className="decoration-[#FFFAE965]/50 underline">
             Let&apos;s talk
           </span>
         </h4>
 
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
+            <PhoneIcon className="h-7 w-7 animate-pulse text-[#FFFAE965]" />
             <p className="text-2xl">0628590462</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
+            <MapPinIcon className="h-7 w-7 animate-pulse text-[#FFFAE965]" />
             <p className="text-2xl">Valenciennes</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
+            <EnvelopeIcon className="h-7 w-7 animate-pulse text-[#FFFAE965]" />
             <p className="text-2xl">alexzoonekynd@gmail.com</p>
           </div>
         </div>
@@ -56,7 +56,7 @@ function ContactMe({}: Props) {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 text-black">
             <input
               {...register("name")}
               placeholder="Name"
@@ -74,14 +74,14 @@ function ContactMe({}: Props) {
           <input
             {...register("subject")}
             placeholder="Subject"
-            className="contactInput"
+            className="contactInput  text-black"
             type="text"
           />
 
           <textarea
             {...register("message")}
             placeholder="Message"
-            className="contactInput"
+            className="contactInput  text-black"
           />
           <button
             type="submit"

@@ -16,7 +16,7 @@ function Button({}: Props) {
   const [title, count] = useTypewriter({
     words: [currentSentence],
     loop: true,
-    delaySpeed: 2000,
+    delaySpeed: 1000,
     deleteSpeed: 0,
     // reset: restartAnimation,
   });
@@ -103,15 +103,16 @@ function Button({}: Props) {
             height: showMessage ? "auto" : 0,
             opacity: showMessage ? 1 : 0,
             width: showMessage ? "auto" : 0,
-            transition: { duration: 2 },
+            transition: { duration: 0.5 },
           }}
           // transition={{ duration: 0.5 }}
           className="border border-solid border-[#FFFBED3C] mx-5 h-auto p-4 rounded-lg shadow-md relative z-1 text-center overflow-hidden"
         >
           <span className="font-[body] text-lg tracking-[2px]">
-            &quot; {title}
+            {'"'}
+            {title}
+            {'"'}
             <Cursor cursorColor="#50FDAC5E" cursorStyle="_" />
-            &quot;
           </span>
         </motion.div>
         <motion.h2
