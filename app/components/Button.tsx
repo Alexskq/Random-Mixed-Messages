@@ -108,7 +108,7 @@ function Button({}: Props) {
           // transition={{ duration: 0.5 }}
           className="border border-solid border-[#FFFBED3C] mx-5 h-auto p-4 rounded-lg shadow-md relative z-1 text-center overflow-hidden"
         >
-          <span>
+          <span className="font-[body] text-lg tracking-[2px]">
             &quot; {title}
             <Cursor cursorColor="#50FDAC5E" cursorStyle="_" />
             &quot;
@@ -118,7 +118,7 @@ function Button({}: Props) {
           initial={{ opacity: 0 }}
           animate={{ opacity: showMessage ? 1 : 0 }}
           transition={{ duration: 0.5 }}
-          className="absolute top-1 left-12 bg-[#000000] px-2 -mt-4 font-semibold text-white-700 z-10"
+          className="absolute top-1 left-12 bg-[#000000] px-2 -mt-4 font-semibold font-[body] italic tracking-[3px] text-white-700 z-10"
         >
           {randomKey}
         </motion.h2>
